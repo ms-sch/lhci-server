@@ -16,8 +16,10 @@ console.log('Starting server...');
     storage: {
       storageMethod: 'sql',
       sqlDialect: 'postgres',
-     // sqlConnectionSsl: true,
-    //  sqlDialectOptions: {ssl: true},
+      ...(process.env.DATABSE_SSL === "false" ? {} : {
+        sqlConnectionSsl: true,
+        sqlDialectOptions: {ssl: true},
+      }),
       sqlConnectionUrl: process.env.DATABASE_URL,
     },
   });
