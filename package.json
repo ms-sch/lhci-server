@@ -4,10 +4,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "dotenv -- npm run start"
+    "dev": "dotenv -- npm run start",
+    "setup": "lhci wizard --basicAuth.username admin --basicAuth.password akuku"
   },
   "dependencies": {
-    "@lhci/server": "0.7.x",
+    "@lhci/server": "0.8.0",
     "express": "^4.17.1",
     "express-basic-auth": "^1.2.0",
     "pg": "^7.12.1",
@@ -17,6 +18,7 @@
     "node": "12.x"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.8.0",
     "dotenv-cli": "^4.0.0"
   }
 }
