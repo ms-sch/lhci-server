@@ -18,7 +18,10 @@ console.log('Starting server...');
       sqlDialect: 'postgres',
       ...(process.env.DATABSE_SSL === "false" ? {} : {
         sqlConnectionSsl: true,
-        sqlDialectOptions: {ssl: true},
+        sqlDialectOptions: { ssl: {
+            require: true,
+            rejectUnauthorized: false
+          }},
       }),
       sqlConnectionUrl: process.env.DATABASE_URL,
     },
