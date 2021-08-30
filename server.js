@@ -30,7 +30,7 @@ console.log('Starting server...');
                     label: 'Sweship Development',
                     branch: 'develop',
                     projectSlug: 'sweship-web',
-                    schedule: '*/10 * * * *', // every 10 minutes
+                    schedule: '0 */4 * * *', // every 10 minutes
                     numberOfRuns: 3,
                     urls: [
                         'https://sweship.seals.schibsted.pl',
